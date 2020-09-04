@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql
+    restart: always
+    ports:
+      - 3389:3306
+    volumes:
+      - db:/data/db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: root
+volumes:
+  db:
+networks:
+  backend:

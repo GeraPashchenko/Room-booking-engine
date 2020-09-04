@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  backend:
+    image: test
+    networks:
+      - backend
+    depends_on:
+      - mysql
+    ports:
+      - 5006:5006
+    environment:
+      MYSQL_URL: jdbc:mysql://localhost:3306/test
+networks:
+  backend:
